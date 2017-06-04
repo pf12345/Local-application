@@ -14,7 +14,7 @@ def index(request):
 #获取游记列表接口
 def getList(request):
 	articleCollection = models.getCollection('tempArticle')
-	articles = articleCollection.find().sort([("_id", -1)]).limit(20)
+	articles = articleCollection.find().sort([("_id", -1)])
 	_articles = []
 	for article in articles:
 		_article = {
@@ -30,4 +30,13 @@ def getList(request):
 		}
 		_articles.append(_article)
 
-	return HttpResponse(json.dumps({"result": "ok", "data": _articles}), content_type="application/json")	
+	response = HttpResponse(json.dumps({"result": "ok", "data": _articles}), content_type="application/json")	
+
+	response["Access-Control-Allow-Origin"] = "*"
+
+	return response
+
+def getNewData(request):
+	crawler.weibo().getPage();
+
+	return HttpResponse('获取数据成功')

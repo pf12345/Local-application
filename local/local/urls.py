@@ -24,7 +24,8 @@ import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', view.index),
-    url(r'^getList/', view.getList)
+    url(r'^getList', view.getList),
+    url(r'^getNewData', view.getNewData)
 ]
 
 media_root = os.path.join(settings.BASE_DIR,'static')

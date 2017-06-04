@@ -49,16 +49,21 @@ class WEIBO(object):
 				'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
 				# 'Accept-Encoding': 'gzip, deflate, sdch, br',
 				'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6',
-				'Cookie' : 'ALF=1498721593; SCF=AmrPNOlHJ8cByfLAIqti2GRXnXC59imt5NbaEY9vdCB4Bfo8FGSbPRbnlT4f_YmDRg1dg6dQsHlPZf0K-4JSLHI.; SUB=_2A250KVBpDeThGeRH6VQU9yfLzD6IHXVX0nAhrDV6PUJbktBeLVP-kW1zIu6mkd9E-s_8b7rOFKQh3BuoaA..; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9WhUb.nd5zWM1R3BbcIDo1KM5JpX5o2p5NHD95QE1KzcSKM4S0MEWs4DqcjBMsqpeoeXSCH81C-4SF-RBntt; SUHB=0U1Z2bU2QAFzG3; SSOLoginState=1496129594; _T_WM=f2f12a794466dbbbcd6118a136d0add2; H5_INDEX=3; H5_INDEX_TITLE=pf12345%E9%94%8B; M_WEIBOCN_PARAMS=luicode%3D10000011%26lfid%3D2302831496814565%26featurecode%3D20000180%26oid%3D4113127190974109%26fid%3D2304131496814565_-_WEIBO_SECOND_PROFILE_WEIBO%26uicode%3D10000011',
+				# 'Cookie' : 'ALF=1498721593; SCF=AmrPNOlHJ8cByfLAIqti2GRXnXC59imt5NbaEY9vdCB4Bfo8FGSbPRbnlT4f_YmDRg1dg6dQsHlPZf0K-4JSLHI.; SUB=_2A250KVBpDeThGeRH6VQU9yfLzD6IHXVX0nAhrDV6PUJbktBeLVP-kW1zIu6mkd9E-s_8b7rOFKQh3BuoaA..; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9WhUb.nd5zWM1R3BbcIDo1KM5JpX5o2p5NHD95QE1KzcSKM4S0MEWs4DqcjBMsqpeoeXSCH81C-4SF-RBntt; SUHB=0U1Z2bU2QAFzG3; SSOLoginState=1496129594; _T_WM=f2f12a794466dbbbcd6118a136d0add2; H5_INDEX=3; H5_INDEX_TITLE=pf12345%E9%94%8B; M_WEIBOCN_PARAMS=luicode%3D10000011%26lfid%3D2302831496814565%26featurecode%3D20000180%26oid%3D4113127190974109%26fid%3D2304131496814565_-_WEIBO_SECOND_PROFILE_WEIBO%26uicode%3D10000011',
 				'Host': 'm.weibo.cn',
 				'content-type': 'application/json; charset=utf-8',
 				'Upgrade-Insecure-Requests': 1,
 				'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
 			}
+
+			# print url
+
 			request = urllib2.Request(url, {}, headers)
 			response = urllib2.urlopen(request)
 
 			_responseStr = response.read().decode('utf-8').encode('utf-8');
+
+			# print _responseStr
 
 			pattern = re.compile('false')
 			pattern1 = re.compile('true')
