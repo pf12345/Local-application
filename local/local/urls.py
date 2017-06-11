@@ -19,13 +19,15 @@ from django.contrib import admin
 from django.conf.urls.static import static
 
 import view
+import chat
 import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', view.index),
     url(r'^getList', view.getList),
-    url(r'^getNewData', view.getNewData)
+    url(r'^getNewData', view.getNewData),
+    url(r'^savePosition$', chat.savePosition)
 ]
 
 media_root = os.path.join(settings.BASE_DIR,'static')

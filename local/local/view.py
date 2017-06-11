@@ -30,7 +30,7 @@ def getList(request):
 		}
 		_articles.append(_article)
 
-	response = HttpResponse(json.dumps({"result": "ok", "data": _articles}), content_type="application/json")	
+	response = HttpResponse(json.dumps({"result": "ok", "data": _articles}), content_type="application/json")
 
 	response["Access-Control-Allow-Origin"] = "*"
 

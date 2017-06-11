@@ -25,7 +25,9 @@ SECRET_KEY = '4s(4i+pqpvm+5u6x!rs5qgf=v&sr8d#o-guztxp$$^cs&&)wj-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS="*"
 
 
 # Application definition
@@ -121,3 +123,14 @@ STATIC_URL = '/web/static/'
 
 
 DBNAME = 'localApp'
+
+CACHES = {
+    'default': {
+        'BACKEND': 'redis_cache.cache.RedisCache',
+        'LOCATION': '127.0.0.1:6379',
+        "OPTIONS": {
+            "CLIENT_CLASS": "redis_cache.client.DefaultClient",
+        },
+    },
+}
+NEVER_REDIS_TIMEOUT=365*24*60*60
