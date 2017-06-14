@@ -14,10 +14,13 @@
    Image
  } from 'react-native';
 
- import Dimensions from 'Dimensions';
+ import Dimensions from 'Dimensions'
 
- import Navigator from './TabNavigator'
- import Home from './home';
+ import Navigator from './components/TabNavigator'
+ import Home from './components/home'
+ import Chat from './components/chat'
+ import Friends from './components/friends'
+ import User from './components/user'
 
  class app extends Component {
    constructor() {
@@ -33,13 +36,13 @@
           return (<Home></Home>)
           break;
         case 'user':
-          return (<Text>user</Text>)
+          return (<User></User>)
           break;
-        case 'position':
-          return (<Text>chat</Text>)
+        case 'chat':
+          return (<Chat></Chat>)
           break;
-        case 'position':
-          return (<Text>friend</Text>)
+        case 'friend':
+          return (<Friends></Friends>)
           break;
        default:
 
@@ -58,9 +61,9 @@
    render() {
      return (
       <View style={styles.warp}>
-
-        {this._renderPage()}
-
+        <View>
+          {this._renderPage()}
+        </View>
         <Navigator chatNum="5" onItemPress={this._navigaterPress.bind(this)} initSelected="position"></Navigator>
       </View>
 

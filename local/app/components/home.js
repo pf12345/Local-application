@@ -35,7 +35,7 @@ class InfoBox extends Component {
   }
 }
 
-import query from './query';
+import query from './../query';
 
 export default class Home extends Component {
   constructor() {

@@ -28,8 +28,8 @@ export default class Navigator extends Component {
             title="我的"
             titleStyle={styles.tabText}
             selectedTitleStyle={styles.selectedTabText}
-            renderIcon={() => <Image style={{width: 22, height: 22}} source={require('./images/user.png')} />}
-            renderSelectedIcon={() => <Image style={{width: 22, height: 22}} source={require('./images/user_select.png')} />}
+            renderIcon={() => <Image style={{width: 22, height: 22}} source={require('./../images/user.png')} />}
+            renderSelectedIcon={() => <Image style={{width: 22, height: 22}} source={require('./../images/user_select.png')} />}
             onPress={() => {
               this.setState({
                 selected: 'user'
@@ -43,8 +43,8 @@ export default class Navigator extends Component {
             title="定位"
             titleStyle={styles.tabText}
             selectedTitleStyle={styles.selectedTabText}
-            renderIcon={() => <Image style={{width: 22, height: 22}} source={require('./images/position.png')} />}
-            renderSelectedIcon={() => <Image style={{width: 22, height: 22}} source={require('./images/position_select.png')} />}
+            renderIcon={() => <Image style={{width: 22, height: 22}} source={require('./../images/position.png')} />}
+            renderSelectedIcon={() => <Image style={{width: 22, height: 22}} source={require('./../images/position_select.png')} />}
             onPress={() => {
               this.setState({
                 selected: 'position'
@@ -58,9 +58,9 @@ export default class Navigator extends Component {
             title="消息"
             titleStyle={styles.tabText}
             selectedTitleStyle={styles.selectedTabText}
-            renderIcon={() => <Image style={{width: 22, height: 22}} source={require('./images/chat.png')} />}
+            renderIcon={() => <Image style={{width: 22, height: 22}} source={require('./../images/chat.png')} />}
             badgeText={this.props.chatNum}
-            renderSelectedIcon={() => <Image style={{width: 22, height: 22}} source={require('./images/chat_select.png')} />}
+            renderSelectedIcon={() => <Image style={{width: 22, height: 22}} source={require('./../images/chat_select.png')} />}
             onPress={() => {
               this.setState({
                 selected: 'chat'
@@ -74,8 +74,8 @@ export default class Navigator extends Component {
             title="好友"
             titleStyle={styles.tabText}
             selectedTitleStyle={styles.selectedTabText}
-            renderIcon={() => <Image style={{width: 22, height: 22}} source={require('./images/friend.png')} />}
-            renderSelectedIcon={() => <Image style={{width: 22, height: 22}} source={require('./images/friend_select.png')} />}
+            renderIcon={() => <Image style={{width: 22, height: 22}} source={require('./../images/friend.png')} />}
+            renderSelectedIcon={() => <Image style={{width: 22, height: 22}} source={require('./../images/friend_select.png')} />}
             onPress={() => {
               this.setState({
                 selected: 'friend'

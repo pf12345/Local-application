@@ -1,4 +1,4 @@
-const BASE_URL = 'http://192.168.199.103:8000';
+const BASE_URL = 'http://172.168.22.18:8000';
 let query = {
   get: function(url, succcb, errcb) {
     var request = new XMLHttpRequest();
@@ -8,11 +8,11 @@ let query = {
       }
 
       if (request.status === 200) {
-        if(succcb && typeof succcb === 'function') {
+        if (succcb && typeof succcb === 'function') {
           succcb(JSON.parse(request.responseText));
         }
       } else {
-        if(errcb && typeof errcb === 'function') {
+        if (errcb && typeof errcb === 'function') {
           errcb(e);
         }
       }
@@ -28,19 +28,20 @@ let query = {
       }
 
       if (request.status === 200) {
-        if(succcb && typeof succcb === 'function') {
+        if (succcb && typeof succcb === 'function') {
           succcb(JSON.parse(request.responseText));
         }
       } else {
-        if(errcb && typeof errcb === 'function') {
+        if (errcb && typeof errcb === 'function') {
           errcb(e);
         }
       }
     };
-    let params_str = '', loc = 0;
-    if(params) {
-      for(let key in params) {
-        if(loc != 0) {
+    let params_str = '',
+      loc = 0;
+    if (params) {
+      for (let key in params) {
+        if (loc != 0) {
           params_str += '&';
         }
         loc++;
@@ -50,7 +51,7 @@ let query = {
     }
     request.open('POST', BASE_URL + url, true);
     //post请求要自己设置请求头
-    request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     request.send(params_str);
   }
 }
